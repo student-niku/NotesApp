@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../components/Navbar/Navbar'
+import NavBar from '../components/NavComponent/Navbar'
 import HeroSection from '../components/HeroComponent/HeroSection'
 import { useLocation } from "react-router-dom";
 const Home = () => {
