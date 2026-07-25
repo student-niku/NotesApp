@@ -16,6 +16,10 @@ const Trash = () => {
   }, []);
 
   const handleUpdate = async (id) => {
+    const conform = confirm("Note Recyle Yes/No")
+      if(!conform){
+        return;
+      }
     try {
       const res = await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/noteupdate/${id}`);
       getTrash();
