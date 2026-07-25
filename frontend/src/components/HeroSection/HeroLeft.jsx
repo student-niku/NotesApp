@@ -11,7 +11,7 @@ const HeroLeft = ({ activeTab, setActiveTab }) => {
 const countTotal = async () => {
   try {
     
-    const res = await axios.get("http://localhost:3000/api/notecount");
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/notecount");
 
      setTotal(res.data.totalNote);
   } catch (error) {
