@@ -12,11 +12,14 @@ const AddNoteForm = () => {
 
 
     try {
+      const conform = confirm("Note Create Yes/No")
+      if(!conform){
+        return navigate('/');;
+      }
       await axios.post("https://notesapp-backend-o8cg.onrender.com/api/note",{
       title,
       description
       })
-      alert("data send Successfully")
     } catch (error) {
       console.log(error);
       
