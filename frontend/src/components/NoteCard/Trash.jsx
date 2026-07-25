@@ -7,7 +7,6 @@ const Trash = () => {
   const [trash, setTrash] = useState([]);
 
   const getTrash = async () => {
-    const conform = confirm("Note Deleted Yes/No")
     const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trash");
     setTrash(res.data.data);
   };
@@ -27,6 +26,10 @@ const Trash = () => {
 
   const deletNote = async (id)=>{
     try {
+      const conform = confirm("Note Deleted Yes/No")
+      if(!conform){
+        return;
+      }
         const res = await axios.delete(`https://notesapp-backend-o8cg.onrender.com/api/notedelete/${id}`)
         getTrash()
     } catch (error) {
