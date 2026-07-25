@@ -1,0 +1,326 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+:root {
+    --font-family: "Poppins", sans-serif;
+  /* Primary Colors */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+
+  /* Background */
+  --bg-color: #f5f7fb;
+  --card-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --navbar-bg: #ffffff;
+
+  /* Text */
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-light: #709dea;
+
+  /* Border */
+  --border-color: #e2e2e2;
+
+  /* Shadow */
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  /* Status Colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+
+  /* Note Colors */
+  --note-yellow: #fff8dc;
+  --note-blue: #eef6ff;
+  --note-green: #ecfdf5;
+  --note-pink: #fdf2f8;
+  --note-purple: #f3e8ff;
+}
+
+/* =================NanBar=========================== */
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: var(--navbar-bg); */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.leftNav{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border-color);
+}
+.leftNav h1{
+    font-size: 24px;
+    color: var(--text-primary);
+}
+.rightnav{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* =================profile========================= */
+.profil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.profile-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: var(--text-primary);
+}
+
+/* ==================addNote========================= */
+.add-note-button{
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-note-button:hover{
+    background-color: var(--primary-hover);
+}
+
+/* ===================searchBar========================= */
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--border-color);
+    padding: 2px 20px;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+}
+
+.search-input{
+    padding: 8px 2px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+     background-color: rgb(247, 247, 247);
+
+
+}
+
+/* =========================Hero Secxtion========================= */
+.herosection{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+}
+
+.heroleft{
+    width: 20%;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+}
+.heroleft button{
+    padding: 10px 20px;
+    background-color: rgb(247, 247, 247);
+    color: var( --text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.heroleft button:hover{
+    background-color: var(--primary);
+    color: #fff;
+}
+ .icon{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.heroright{
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+
+.add-note-form{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-note-form-container{
+    width: 400px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.add-note-form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.add-note-form-container form input,
+.add-note-form-container form textarea{
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+.add-note-form-container form button{
+    padding: 10px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-note-form-container form button:hover{
+    background-color: var(--primary-hover);
+}
+.add-note-form-container h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+
+/* ============card======================== */
+.allnote-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+    justify-content:start;
+}
+.note-card{
+    width:260px;
+    min-height:250px;
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:18px;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.3s;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.note-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-dot{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:#8b5cf6;
+}
+
+.star-icon{
+    font-size:22px;
+    color:#9ca3af;
+    cursor:pointer;
+}
+
+.note-card h2{
+    font-size:24px;
+    margin:18px 0 15px;
+    font-weight:700;
+}
+
+.note-card p{
+    font-size:14px;
+    color:#444;
+    line-height:1.8;
+    flex:1;
+}
+
+.card-time{
+    margin-top:25px;
+    color:#6b7280;
+    font-size:17px;
+}
+
+.card-footer{
+    display:flex;
+    /* background-color: #992a2a; */
+    justify-content:space-between;
+    align-items:center;
+    position: relative;
+
+}
+
+.deleticon{
+    font-size: 25px;
+    color: #dc2424;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 1px;
+}
+.update-icon{
+    font-size: 25px;
+    color: #4f46e5;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 1px;
+}
+.delete-icon{
+    font-size: 25px;
+    color: #ee0606;
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    bottom: 2px;
+}
