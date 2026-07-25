@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../components/navbar/NavBar'
-import HeroSection from '../components/heroSection/HeroSection'
+import NavBar from '../components/Navbar/navbar'
+import HeroSection from '../components/HeroSection/heroSection'
 import { useLocation } from "react-router-dom";
 const Home = () => {
    const location = useLocation();
@@ -8,8 +8,8 @@ const Home = () => {
    
   return (
     <div>
-        <NavBar/>
-        <HeroSection/>
+        <navbar/>
+        <heroSection/>
     </div>
   )
 }
