@@ -7,7 +7,7 @@ const Trash = () => {
   const [trash, setTrash] = useState([]);
 
   const getTrash = async () => {
-    const res = await axios.get("http://localhost:3000/api/trash");
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trash");
     setTrash(res.data.data);
   };
 
@@ -17,7 +17,7 @@ const Trash = () => {
 
   const handleUpdate = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:3000/api/noteupdate/${id}`);
+      const res = await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/noteupdate/${id}`);
       getTrash();
     } catch (error) {
       console.error("Error updating note:", error);
@@ -26,7 +26,7 @@ const Trash = () => {
 
   const deletNote = async (id)=>{
     try {
-        const res = await axios.delete(`http://localhost:3000/api/notedelete/${id}`)
+        const res = await axios.delete(`https://notesapp-backend-o8cg.onrender.com/api/notedelete/${id}`)
         getTrash()
     } catch (error) {
       console.log(error);

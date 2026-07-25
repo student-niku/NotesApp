@@ -8,7 +8,7 @@ const AllNote = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/note");
+      const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/note");
       setNotes(res.data.data);
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ const AllNote = () => {
   const deleteNote = async (id) => {
     try {
       
-      await axios.put(`http://localhost:3000/api/note/${id}`);
+      await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/note/${id}`);
       getData();
     } catch (error) {
       console.log(error);

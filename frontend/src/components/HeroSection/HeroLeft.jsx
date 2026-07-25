@@ -25,7 +25,7 @@ useEffect(() => {
 
 const trashCount = async()=>{
   try {
-    const res = await axios.get("http://localhost:3000/api/trashcount")
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trashcount")
     setTrash(res.data.totalNote);
     
   } catch (error) {
