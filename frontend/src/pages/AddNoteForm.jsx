@@ -26,7 +26,7 @@ const AddNoteForm = () => {
     }
 
   
-    navigate('/');
+    navigate('/dashboard');
 
   }
   return (

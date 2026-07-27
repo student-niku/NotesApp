@@ -4,7 +4,10 @@ const userNoteModle = require("../modles/noteModle")
 const trashCount = async(req,res) =>{
     try {
 
-     const totalNote = await userNoteModle.countDocuments({isDeleted:1})
+     const trash = await userNoteModle.find({
+         userId: req.user._id,
+         isDeleted: 1,
+     });
 
       res.status(200).json({
       success: true,
