@@ -6,14 +6,21 @@ import axios from "axios";
 const AllNote = () => {
   const [notes, setNotes] = useState([]);
 
-  const getData = async () => {
-    try {
-      const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/note");
-      setNotes(res.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ const getData = async () => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/note", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    setNotes(res.data.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
   useEffect(() => {
     getData();
@@ -21,8 +28,13 @@ const AllNote = () => {
 
   const deleteNote = async (id) => {
     try {
-      
-      await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/note/${id}`);
+      const token = localStorage.getItem("token")
+
+      await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/note/${id}`,{},{
+        headers:{
+          Authorization : `Beare ${token}`
+        }
+      });
       getData();
     } catch (error) {
       console.log(error);

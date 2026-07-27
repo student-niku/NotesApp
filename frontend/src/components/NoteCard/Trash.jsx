@@ -7,7 +7,12 @@ const Trash = () => {
   const [trash, setTrash] = useState([]);
 
   const getTrash = async () => {
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trash");
+    const token  = localStorage.getItem("token")
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trash",{
+      headers:{
+        Authorization:`Beare ${token}`
+      }
+    });
     setTrash(res.data.data);
   };
 
@@ -16,12 +21,18 @@ const Trash = () => {
   }, []);
 
   const handleUpdate = async (id) => {
+      const token = localStorage.getItem("token")
+
     const conform = confirm("Note Recyle Yes/No")
       if(!conform){
         return;
       }
     try {
-      const res = await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/noteupdate/${id}`);
+      const res = await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/noteupdate/${id}`,{},{
+        headers:{
+          Authorization:`Beare ${token}`
+        }
+      });
       getTrash();
     } catch (error) {
       console.error("Error updating note:", error);
@@ -30,11 +41,17 @@ const Trash = () => {
 
   const deletNote = async (id)=>{
     try {
+      const token = localStorage.getItem("token")
+
       const conform = confirm("Note Deleted Yes/No")
       if(!conform){
         return;
       }
-        const res = await axios.delete(`https://notesapp-backend-o8cg.onrender.com/api/notedelete/${id}`)
+        const res = await axios.delete(`https://notesapp-backend-o8cg.onrender.com/api/notedelete/${id}`,{
+          headers:{
+            Authorization:`Beare ${token}`
+          }
+        })
         getTrash()
     } catch (error) {
       console.log(error);

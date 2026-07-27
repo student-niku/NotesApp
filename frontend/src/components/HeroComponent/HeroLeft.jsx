@@ -10,8 +10,13 @@ const HeroLeft = ({ activeTab, setActiveTab }) => {
 
 const countTotal = async () => {
   try {
+    // const token = localStorage.getItem("token")
     
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/notecount");
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/notecount",{
+      headers:{
+        Authorization:` Beare ${token}`
+      }
+    });
 
      setTotal(res.data.totalNote);
   } catch (error) {
@@ -25,7 +30,12 @@ useEffect(() => {
 
 const trashCount = async()=>{
   try {
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trashcount")
+    // const token = localStorage("token")
+    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trashcount",{
+      headers:{
+        Authorization:`Beare ${token}`
+      }
+    })
     setTrash(res.data.totalNote);
     
   } catch (error) {

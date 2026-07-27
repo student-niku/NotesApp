@@ -12,6 +12,7 @@ const AddNoteForm = () => {
 
 
     try {
+      const token = localStorage.getItem("token")
       const conform = confirm("Note Create Yes/No")
       if(!conform){
         return navigate('/');;
@@ -19,6 +20,10 @@ const AddNoteForm = () => {
       await axios.post("https://notesapp-backend-o8cg.onrender.com/api/note",{
       title,
       description
+      },{
+        headers:{
+          Authorization:`Beare ${token}`
+        }
       })
     } catch (error) {
       console.log(error);
