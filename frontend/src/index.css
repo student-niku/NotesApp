@@ -154,6 +154,7 @@
     flex-direction: column;
     border-right: 1px solid var(--border-color);
     padding: 20px;
+    position: relative;
 }
 .heroleft button{
     padding: 10px 20px;
@@ -178,6 +179,42 @@
     gap: 10px;
     align-items: center;
 }
+@media (max-width: 768px){
+    .heroleft{
+        position: absolute;
+        width: 50%;
+        z-index: 999;
+        display: none;
+    }
+    .search-bar{
+        display: none;
+    }
+    .leftNav{
+        display: none;
+    }
+    .rightnav{
+        width: 100%;
+        padding-right: 5px;
+    }
+    .herosection{
+        width: 100%;
+    }
+    .heroright{
+            width: 100% !important ;
+            height: 100%;
+            padding: 0px;
+    }
+
+    .profil{
+        width: 100%;
+        /* background-color: #22c55e; */
+        padding-right: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
 
 .heroright{
     width: 80%;
