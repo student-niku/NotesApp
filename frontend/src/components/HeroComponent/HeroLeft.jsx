@@ -12,7 +12,7 @@ const countTotal = async () => {
   try {
     // const token = localStorage.getItem("token")
     
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/notecount",{
+    const res = await axios.get("https://notesapp-backend-5m9g.onrender.com/api/notecount",{
       headers:{
         Authorization:` Beare ${token}`
       }
@@ -31,7 +31,7 @@ useEffect(() => {
 const trashCount = async()=>{
   try {
     // const token = localStorage("token")
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trashcount",{
+    const res = await axios.get("https://notesapp-backend-5m9g.onrender.com/api/trashcount",{
       headers:{
         Authorization:`Beare ${token}`
       }
