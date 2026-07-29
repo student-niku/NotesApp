@@ -14,7 +14,7 @@ const Register = () => {
 
         
         try {
-              const res = await axios.post("https://notesapp-backend-o8cg.onrender.com/api/auth/register",{
+              const res = await axios.post("https://notesapp-backend-5m9g.onrender.com/api/auth/register",{
                 username,
                 email,
                 password
