@@ -8,7 +8,7 @@ const Trash = () => {
 
   const getTrash = async () => {
     const token  = localStorage.getItem("token")
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/trash",{
+    const res = await axios.get("https://notesapp-backend-5m9g.onrender.com/api/trash",{
       headers:{
         Authorization:`Beare ${token}`
       }
@@ -28,7 +28,7 @@ const Trash = () => {
         return;
       }
     try {
-      const res = await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/noteupdate/${id}`,{},{
+      const res = await axios.put(`https://notesapp-backend-5m9g.onrender.com/api/noteupdate/${id}`,{},{
         headers:{
           Authorization:`Beare ${token}`
         }
@@ -47,7 +47,7 @@ const Trash = () => {
       if(!conform){
         return;
       }
-        const res = await axios.delete(`https://notesapp-backend-o8cg.onrender.com/api/notedelete/${id}`,{
+        const res = await axios.delete(`https://notesapp-backend-5m9g.onrender.com/api/notedelete/${id}`,{
           headers:{
             Authorization:`Beare ${token}`
           }
