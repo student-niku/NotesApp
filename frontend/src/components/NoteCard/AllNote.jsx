@@ -10,7 +10,7 @@ const AllNote = () => {
   try {
     const token = localStorage.getItem("token");
 
-    const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/note", {
+    const res = await axios.get("https://notesapp-backend-5m9g.onrender.com/api/note", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -30,7 +30,7 @@ const AllNote = () => {
     try {
       const token = localStorage.getItem("token")
 
-      await axios.put(`https://notesapp-backend-o8cg.onrender.com/api/note/${id}`,{},{
+      await axios.put(`https://notesapp-backend-5m9g.onrender.com/api/note/${id}`,{},{
         headers:{
           Authorization : `Beare ${token}`
         }
