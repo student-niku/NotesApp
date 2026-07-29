@@ -13,7 +13,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-           const res =  await axios.post("https://notesapp-backend-o8cg.onrender.com/api/auth/login",{
+           const res =  await axios.post("https://notesapp-backend-5m9g.onrender.com/api/auth/login",{
                 email,
                 password
             })
