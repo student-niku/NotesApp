@@ -17,7 +17,7 @@ const AddNoteForm = () => {
       if(!conform){
         return navigate('/');;
       }
-      await axios.post("https://notesapp-backend-o8cg.onrender.com/api/note",{
+      await axios.post("https://notesapp-backend-5m9g.onrender.com/api/note",{
       title,
       description
       },{
