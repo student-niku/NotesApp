@@ -14,7 +14,7 @@ const Profil = () => {
   const getme = async ()=>{
     try {
       const token = localStorage.getItem("token")
-      const res = await axios.get("https://notesapp-backend-o8cg.onrender.com/api/auth/get-me",{
+      const res = await axios.get("https://notesapp-backend-5m9g.onrender.com/api/auth/get-me",{
         headers:{
             Authorization:`Bearer ${token}`
         }
